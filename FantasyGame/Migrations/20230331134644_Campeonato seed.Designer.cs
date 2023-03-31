@@ -4,6 +4,7 @@ using FantasyGame.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FantasyGame.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230331134644_Campeonato seed")]
+    partial class Campeonatoseed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,68 +88,6 @@ namespace FantasyGame.Migrations
                     b.HasIndex("Time2Id");
 
                     b.ToTable("Partidas");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 500,
-                            CampeonatoId = 1000,
-                            Data = new DateTime(2023, 1, 1, 19, 34, 13, 856, DateTimeKind.Unspecified).AddTicks(690),
-                            Time1Gols = 3,
-                            Time1Id = 500,
-                            Time2Gols = 2,
-                            Time2Id = 501
-                        },
-                        new
-                        {
-                            Id = 501,
-                            CampeonatoId = 1000,
-                            Data = new DateTime(2023, 1, 1, 19, 34, 13, 856, DateTimeKind.Unspecified).AddTicks(690),
-                            Time1Gols = 2,
-                            Time1Id = 500,
-                            Time2Gols = 3,
-                            Time2Id = 502
-                        },
-                        new
-                        {
-                            Id = 502,
-                            CampeonatoId = 1000,
-                            Data = new DateTime(2023, 1, 1, 19, 34, 13, 856, DateTimeKind.Unspecified).AddTicks(690),
-                            Time1Gols = 1,
-                            Time1Id = 500,
-                            Time2Gols = 1,
-                            Time2Id = 503
-                        },
-                        new
-                        {
-                            Id = 503,
-                            CampeonatoId = 1000,
-                            Data = new DateTime(2023, 1, 1, 19, 34, 13, 856, DateTimeKind.Unspecified).AddTicks(690),
-                            Time1Gols = 5,
-                            Time1Id = 501,
-                            Time2Gols = 4,
-                            Time2Id = 502
-                        },
-                        new
-                        {
-                            Id = 504,
-                            CampeonatoId = 1000,
-                            Data = new DateTime(2023, 1, 1, 19, 34, 13, 856, DateTimeKind.Unspecified).AddTicks(690),
-                            Time1Gols = 4,
-                            Time1Id = 501,
-                            Time2Gols = 2,
-                            Time2Id = 503
-                        },
-                        new
-                        {
-                            Id = 505,
-                            CampeonatoId = 1000,
-                            Data = new DateTime(2023, 1, 1, 19, 34, 13, 856, DateTimeKind.Unspecified).AddTicks(690),
-                            Time1Gols = 3,
-                            Time1Id = 502,
-                            Time2Gols = 1,
-                            Time2Id = 503
-                        });
                 });
 
             modelBuilder.Entity("FantasyGame.Models.Data.Entities.Time", b =>

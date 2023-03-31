@@ -1,4 +1,5 @@
-﻿using FantasyGame.Models.Data.Entities;
+﻿using FantasyGame.Database.Seed;
+using FantasyGame.Models.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FantasyGame.Database
@@ -24,6 +25,13 @@ namespace FantasyGame.Database
                 .HasOne(t => t.Time2)
                 .WithMany()
                 .OnDelete(DeleteBehavior.Restrict);
+
+
+            #region Seed calls
+            TimeSeed.Seed(modelBuilder);
+            CampeonatoSeed.Seed(modelBuilder);
+            PartidaSeed.Seed(modelBuilder);
+            #endregion
         }
     }
 }
