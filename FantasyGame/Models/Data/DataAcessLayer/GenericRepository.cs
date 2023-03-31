@@ -12,7 +12,7 @@ namespace FantasyGame.Models.Data.DataAcessLayer
             this._dbContext = context;
         }
 
-        public async Task<TEntity?> GetByIdAsync(int id)
+        public virtual async Task<TEntity?> GetByIdAsync(int id)
         {
             return await _dbContext.Set<TEntity>().FindAsync(id);
         }
@@ -20,6 +20,11 @@ namespace FantasyGame.Models.Data.DataAcessLayer
         public async Task<IList<TEntity>> GetPaginated(int skip, int take)
         {
              return await _dbContext.Set<TEntity>().Skip(skip).Take(take).ToListAsync();
+        }
+
+        public async Task<IList<TEntity>> GetAll()
+        {
+            return await _dbContext.Set<TEntity>().ToListAsync();
         }
 
         public async Task<int> CountTotalRecords()

@@ -10,13 +10,13 @@ namespace FantasyGame.Endpoints.Times
 {
     public class TimeBusinessRule
     {
-        private readonly UnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;
         public TimeBusinessRule(UnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IBaseResponseModel> GetTime(int Id)
+        public async Task<IBaseResponseModel> GetTimeById(int Id)
         {
             try
             {
@@ -115,6 +115,11 @@ namespace FantasyGame.Endpoints.Times
                 if (time == null)
                 {
                     return new FailedResponseModel(false, "Nenhum time com esse ID foi encontrado no sistema");
+                }
+
+                if (await _unitOfWork._partidaRepository.TimeHavePlayed(id))
+                {
+                    return new FailedResponseModel(false, "Não é possível deletar o time, pois já participou de campeonatos");
                 }
 
                 _unitOfWork._timeRepository.Delete(time);

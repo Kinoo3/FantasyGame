@@ -1,4 +1,5 @@
 using FantasyGame.Database;
+using FantasyGame.Endpoints.Campeonatos;
 using FantasyGame.Endpoints.Times;
 using FantasyGame.Models.Data.DataAcessLayer.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +17,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 
 builder.Services.AddScoped<UnitOfWork>();
 
-builder.Services.AddTransient <TimeBusinessRule>();
+builder.Services.AddTransient<TimeBusinessRule>();
+builder.Services.AddTransient<CampeonatoBusinessRule>();
+
 
 var app = builder.Build();
 
