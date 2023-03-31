@@ -27,3 +27,5 @@ Data: As entidades do domínio da aplicação, e a Camada de Acesso a Dados (DAL
 Root: InputModels e OutputModels que definem como a aplicação recebe e retorna dados
 
 - Utils: Contém classes que exercem funções generalizadas que podem ser usadas ao longo de toda aplicação
+
+*Contém alguns exemplos de time/campeonato/partida no banco
