@@ -13,7 +13,7 @@ Instruções:
 <li>Clone o repositório</li>
 <li>Restaure as bibliotecas via prompt (dotnet restore) ou através do visual studio</li>
 <li>Mude a ConnectionString no arquivo appsetings.json, conforme necessário para apontar para o banco SQLServer local</li>
-<li>Use o comand Update-database para aplicação as migrações ao banco de dados</li>
+<li>Use o comando Update-database para aplicar as migrações ao banco de dados</li>
 <li>Build & Run o projeto, a página inicial a ser carregada é a página do swagger contendo os endpoints da aplicação</li>
 </ul>
 
@@ -26,4 +26,4 @@ Estrutura de arquivos:
 Data: As entidades do domínio da aplicação, e a Camada de Acesso a Dados (DAL), que contém o UnitOfWork e os Repositorys para acessar os dados  
 Root: InputModels e OutputModels que definem como a aplicação recebe e retorna dados
 
-- Utils: Contém classes que exercem funções generalizadas que podem ser usada por toda aplicação
+- Utils: Contém classes que exercem funções generalizadas que podem ser usadas ao longo de toda aplicação
